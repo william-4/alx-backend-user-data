@@ -10,7 +10,7 @@ import re
 def filter_datuem(fields: [str], redaction: str, message: str,
                   seperator: str) -> str:
     """
-    Returns an obfuscated
+    Returns an obfuscated string
     Args:
         fields (list): strings representing all fields to obfuscate
         redaction (str): what the field will be obfuscated
