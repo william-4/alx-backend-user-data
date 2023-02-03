@@ -7,8 +7,8 @@ Main module
 import re
 
 
-def filter_datuem(fields: [str], redaction: str, message: str,
-                  seperator: str) -> str:
+def filter_datuem(fields: list, redaction: str, message: str,
+                  separator: str) -> str:
     """
     Returns an obfuscated string
     Args:
