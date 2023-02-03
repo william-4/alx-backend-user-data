@@ -10,7 +10,6 @@ import os
 import mysql.connector
 
 
-
 def filter_datuem(fields: list[str], redaction: str, message: str,
                   separator: str) -> str:
     """
