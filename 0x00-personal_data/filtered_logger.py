@@ -10,7 +10,7 @@ import os
 import mysql.connector
 
 
-def filter_datuem(fields: list[str], redaction: str, message: str,
+def filter_datum(fields: list[str], redaction: str, message: str,
                   separator: str) -> str:
     """Returns an obfuscated string"""
     for field in fields:
