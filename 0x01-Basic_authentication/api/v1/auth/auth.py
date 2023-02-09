@@ -11,7 +11,7 @@ class Auth():
     Class to manage the API authentication
     """
 
-    def __init__():
+    def __init__(self):
         """
         Method called during initialization
         """
