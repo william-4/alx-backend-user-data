@@ -4,7 +4,7 @@ Module to manage API authentication
 """
 
 from flask import request
-
+from typing import TypeVar
 
 class Auth():
     """
