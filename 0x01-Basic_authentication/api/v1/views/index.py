@@ -44,4 +44,3 @@ def forbidden() -> str:
       - raise a 403 error by using abort
     """
     abort(403)
-    
