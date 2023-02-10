@@ -4,17 +4,17 @@ Module to manage API authentication
 """
 
 from flask import request
-from typing import TypeVar
+from typing import TypeVar, List
 
 
-class Auth():
+class Auth:
     """
     Class to manage the API authentication
     """
 
-    def require_auth(self, path: str, excluded_paths: list[str]) -> bool:
+    def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
-        Method that returns false
+        Returns true if a path requires authentication
         """
         if path is None:
             return (True)
@@ -22,6 +22,10 @@ class Auth():
             return (True)
         elif (path in excluded_paths) or ((path + '/') in excluded_paths):
             return (False)
+        for i in excluded_paths:
+            if i[-1] == "*":
+                if path.startswith(i[:-1]):
+                    return (False)
         else:
             return (True)
 
@@ -35,7 +39,6 @@ class Auth():
         if header is None:
             return (None)
         return (header)
-        
 
     def current_user(self, request=None) -> TypeVar('User'):
         """

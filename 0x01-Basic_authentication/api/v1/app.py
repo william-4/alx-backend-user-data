@@ -31,8 +31,8 @@ def before_request():
         pass
     else:
         excluded = [
-            '/api/v1/status/', 
-            '/api/v1/unauthorized/', 
+            '/api/v1/status/',
+            '/api/v1/unauthorized/',
             '/api/v1/forbidden/'
         ]
         if auth.require_auth(request.path, excluded):
