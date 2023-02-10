@@ -8,7 +8,7 @@ import re
 import logging
 import os
 import mysql.connector
-from Type import List
+from Typing import List
 
 
 def filter_datum(fields: List[str], redaction: str, message: str,
