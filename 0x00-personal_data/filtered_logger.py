@@ -8,9 +8,10 @@ import re
 import logging
 import os
 import mysql.connector
+from Type import List
 
 
-def filter_datum(fields: list[str], redaction: str, message: str,
+def filter_datum(fields: List[str], redaction: str, message: str,
                   separator: str) -> str:
     """Returns an obfuscated string"""
     for field in fields:
@@ -27,7 +28,7 @@ class RedactingFormatter(logging.Formatter):
     FORMAT = "[HOLBERTON] %(name)s %(levelname)s %(asctime)-15s: %(message)s"
     SEPARATOR = ";"
 
-    def __init__(self, fields: list[str]):
+    def __init__(self, fields: List[str]):
         super(RedactingFormatter, self).__init__(self.FORMAT)
         self.fields = fields
 
